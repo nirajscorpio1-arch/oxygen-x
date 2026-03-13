@@ -118,7 +118,7 @@
         const inputField = document.getElementById('userInput');
         let lastUserMsg = "";
 
-        // আপনার নির্দেশিত মেথড অনুযায়ী এপিআই কী-র বিভাজন
+        // এপিআই কী বিভাজন মেথড
         const part1 = 'gsk_vrxpInllK7';
         const part2 = 'cJ0s2BI0XZWGdyb3FY';
         const part3 = 'Rf3WPmEGfdb0vBuHPFz3Uaso';
@@ -209,7 +209,7 @@
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        model: "llama3-70b-8192", 
+                        model: "llama-3.3-70b-versatile", 
                         messages: [
                             {role: "system", content: SYSTEM_PROMPT}, 
                             {role: "user", content: text}
@@ -229,7 +229,7 @@
                     aiBubble.innerHTML = `<span class="ai-header">✦ OXYGEN-X ROOT</span>` + marked.parse(content);
                 }
             } catch (e) {
-                document.getElementById(loaderId).innerHTML = `<span class="ai-header">✦ ERROR</span> কানেকশন ফেইল্ড!`;
+                document.getElementById(loaderId).innerHTML = `<span class="ai-header">✦ ERROR</span> কানেকশন ফেইল্ড! নেটওয়ার্ক চেক করুন।`;
             }
             scrollBottom();
         }
